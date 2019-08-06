@@ -8,7 +8,7 @@ no terminal, rode npm install nas pastas api e alurapic
 npm start na pasta api
 npm start na pasta alurapic
 
-estara rodando na porta 4200
+estara rodando na porta 4200 e a api na port 3000
 
 ps.:
 o codigo está funcional.
