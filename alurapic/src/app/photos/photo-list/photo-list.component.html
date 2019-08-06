@@ -1,0 +1,21 @@
+<ap-search 
+    (onTyping)="filter = $event" [value]="filter"><!-- [value] recebe o valor que vem do @input -->
+    <!-- o (onTyping) qnd disparado realiza o event dentro do filter de photolistcomponent
+    O (evento) tem que sero mesmo nome
+       ele esta escutando e qnd receber a prop, manda pra filter
+    depois disso tem que fazer com que o botao load more limpe o valor (ver em ph.lidt.comp)
+     -->
+</ap-search>
+<!-- foi criado um novo componente para renderizar as listas de fotos -->
+<!-- pasta photolist/photos -->
+<ap-photos 
+    [photos]="photos | filterByDescription: filter">
+    <!-- fao o databiding com photos lá do componente -->
+    <!-- o pipe filterbydesc-> foi criado vai receber dois parametros: photos e filter  -->
+</ap-photos>
+
+<ap-load-button 
+    (click)="load()" 
+    [hasMore]="hasMore">
+    <!-- click chama o load quepode mudar o hasmore de true pra false -->
+</ap-load-button>

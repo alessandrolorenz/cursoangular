@@ -1,0 +1,23 @@
+<header class="fixed-top">
+    <nav class="navbar navbar-light bg-white">
+        <a class="navbar-brand">ALURAPIC</a>
+
+        <div *ngIf="(user$ | async) as user; else login"> <!-- ascync pega o observable e pega o valor,
+                                                além disso ele mesmo se encarrega de destruir (unsubscribe)-->
+            <i class="fa fa-user-circle mr-1"></i>
+            <a class="mr-1">{{ user.name}}</a>
+            <a (click)="logout()">(Logout)</a> <!--  o binding é para logout do componente  -->
+        </div>
+
+        <ng-template #login>
+            <span class="navbar-text">
+                <a [routerLink]="['']">Please, login!</a> <!-- o router é usado para que
+                                                nao seja sempre carregadas paginas ja carregadas toda vez
+                                            e precisa importar o routermodule no coremodule(que é o que o esta usando)  -->
+            </span>
+        </ng-template> 
+    </nav>
+    <div class="fixed-top">
+        <ap-alert></ap-alert>
+    </div>
+</header>

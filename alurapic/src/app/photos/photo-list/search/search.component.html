@@ -1,0 +1,18 @@
+<div class="text-center mt-3 mb-3">
+    <form>
+        <i aria-hidden="true" class="fa fa-search mr-1"></i>
+        <input 
+            class="rounded" 
+            type="search" 
+            placeholder="search..." 
+            autofocus
+            (keyup)="debounce.next($event.target.value)"
+            [value]="value"
+            >
+            <!-- o event binding () pega o valor do temp e manda para o comp  -->
+            <!-- o data binding [] pega o valor do comp e manda para o temp  -->
+            <!-- debounce (subject) para evitar que a cada digito ele carregue a chamada
+            entao o debounce o faz esperar uns segundos (ver serachcomponent)  
+            [value] databind para a prop do template -->
+    </form>
+</div>
